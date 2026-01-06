@@ -1,5 +1,34 @@
 @import url('https://glen-players.gitlab.io/06/i/icons.css');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@font-face {
+  font-family: 'CookieRun';
+  src: local('CookieRun Black'), local('CookieRun-Black'),
+    url('fonts/CookieRun-Black.woff2') format('woff2'),
+    url('fonts/CookieRun-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CookieRun';
+  src: local('CookieRun Regular'), local('CookieRun-Regular'),
+    url('fonts/CookieRun-Regular.woff2') format('woff2'),
+    url('fonts/CookieRun-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CookieRun';
+  src: local('CookieRun Bold'), local('CookieRun-Bold'),
+    url('fonts/CookieRun-Bold.woff2') format('woff2'),
+    url('fonts/CookieRun-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* -------------------------------------------------------- */
 /* VARIABLES */
@@ -620,4 +649,5 @@ span[class^='footnote'] {
   padding: 0.2em 0.5em;
   font-size: 90%;
 }
+
 
