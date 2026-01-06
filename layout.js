@@ -22,7 +22,7 @@ function headerHTML() {
       <header>
 
         <div class="header-content">
-	        <div class="header-title"><a href="/">shadowmilk.gay</a></div>
+	        <div class="header-title"><a href="/">shadowmilk.moe</a></div>
             <div class="header-subtitle">a beast of deceit shrine and cookie run fansite</div>
 	        
 	        <!-- NAVIGATION -->
@@ -270,3 +270,4 @@ function showHide(divID) {
     // console.log(e + ' line: ' + e.lineNumber + ' File: ' + e.fileName);
   }
 }
+
