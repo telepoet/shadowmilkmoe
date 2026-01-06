@@ -90,7 +90,7 @@ function headerHTML() {
 
          </aside>
       <footer style="text-align:center">
-      <small><i>Shadow Milk Cookie and CookieRun: Kingdom © Devsisters Corp.</i></small>
+      <small><i>Shadow Milk Cookie and CookieRun: Kingdom © Devsisters Corp.<br />This content is not affiliated, sponsored or approved by Devsisters.</i></small>
       </footer>`;
 }
 
@@ -270,4 +270,3 @@ function showHide(divID) {
     // console.log(e + ' line: ' + e.lineNumber + ' File: ' + e.fileName);
   }
 }
-
