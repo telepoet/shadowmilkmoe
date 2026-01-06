@@ -1,4 +1,5 @@
 @import url('https://glen-players.gitlab.io/06/i/icons.css');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
 /* -------------------------------------------------------- */
 /* VARIABLES */
@@ -619,3 +620,4 @@ span[class^='footnote'] {
   padding: 0.2em 0.5em;
   font-size: 90%;
 }
+
