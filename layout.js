@@ -50,7 +50,8 @@ function headerHTML() {
 	                <ul>
                   	<li><a href="/fanrec.html">favorite fanworks</a></li>
 	                  <li><a href="/webmaster.html">webmaster</a></li>
-	                  <li><a href="/credits.html">additional credits</a></li>
+					  <li><a href="https://shadowmilkmoe.atabook.org/" target="_blank">guestbook</a></li>
+	                  <li><a href="/credits.html">credits</a></li>
 	                </ul>
 	            </li>
 	          </ul>
@@ -270,3 +271,4 @@ function showHide(divID) {
     // console.log(e + ' line: ' + e.lineNumber + ' File: ' + e.fileName);
   }
 }
+
