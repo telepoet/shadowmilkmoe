@@ -50,8 +50,7 @@ function headerHTML() {
 	                <ul>
                   	<li><a href="/fanrec.html">favorite fanworks</a></li>
 	                  <li><a href="/webmaster.html">webmaster</a></li>
-					  <li><a href="https://shadowmilkmoe.atabook.org/" target="_blank">guestbook</a></li>
-	                  <li><a href="/credits.html">credits</a></li>
+	                  <li><a href="/credits.html">additional credits</a></li>
 	                </ul>
 	            </li>
 	          </ul>
@@ -69,18 +68,22 @@ function headerHTML() {
         <div class="sidebar-section" style="text-align:center">
         <img src="./images/souljam.webp" style="width: 125px;" />
         <marquee>remember to do your guild battles!</marquee>
-          <p>i don't actually know what to put on this sidebar yet. maybe by the time this has more than like two or three acceptable looking pages i'll work smn out</p>
+        <hr>
+          <p>if you're cold he's cold. put him on your website:</p>
+          <img src="./images/8831moe.gif"/>
+          <textarea>&lt;a href="https://shadowmilk.moe/" target="_blank"&gt;
+&lt;img src="https://shadowmilk.moe/images/8831moe.gif"/&gt;
+&lt;/a&gt;</textarea>
 
         </div>
           <hr>
         <div class="sidebar-section">
-              <div class="sidebar-title">priority to-do list</div>
+              <div class="sidebar-title">to-do list</div>
             <blockquote>
               <ul>
               <li><b>image descriptions for screenreaders</b></li>
               <li>relationships page</li>
               <li>fount writeup</li>
-              <li>pretty much everything tbh</li>
               </ul>
             </blockquote>
             <div style="text-align:center">
@@ -161,7 +164,7 @@ function SetupTips() {
       // Add a hidden link to skip the section
       myDiv.insertAdjacentHTML(
         'beforebegin',
-        `<a href="#End-of-${myDiv.id}"><span class="sr-only">Skip footnote section</span></a>`
+        `<a href="#End-of-${myDiv.id}"><span class="sr-only">Skip footnote section</span></a>`,
       );
 
       // Add the hidden div to where that link goes to
@@ -203,7 +206,7 @@ function SetupTips() {
           // Note that the %20 in the href inserts spaces so the link appears nicely in browser status bar as "# Show Footnote 1", though there is no actual link.
           myFn.insertAdjacentHTML(
             'beforebegin',
-            `<a class="fnNum" href="#Show%20Footnote%20${fnNumber} " title="Show/Hide footnote ${fnNumber} " id="${myid}a" onclick="showHide(&quot;${myid}&quot;);return false;">[<span class="sr-only">Footnote </span><span class="fnNumIn">${fnNumber}</span>]</a>`
+            `<a class="fnNum" href="#Show%20Footnote%20${fnNumber} " title="Show/Hide footnote ${fnNumber} " id="${myid}a" onclick="showHide(&quot;${myid}&quot;);return false;">[<span class="sr-only">Footnote </span><span class="fnNumIn">${fnNumber}</span>]</a>`,
           );
 
           // Surround the footnote content with an inner div that will display as table-cell
@@ -271,4 +274,3 @@ function showHide(divID) {
     // console.log(e + ' line: ' + e.lineNumber + ' File: ' + e.fileName);
   }
 }
-
