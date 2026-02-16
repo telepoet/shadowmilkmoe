@@ -71,7 +71,7 @@ function headerHTML() {
         <hr>
           <p>if you're cold he's cold. put him on your website:</p>
           <img src="./images/8831moe.gif"/>
-          <textarea>&lt;a href="https://shadowmilk.moe/" target="_blank"&gt;
+          <textarea readonly>&lt;a href="https://shadowmilk.moe/" target="_blank"&gt;
 &lt;img src="https://shadowmilk.moe/images/8831moe.gif"/&gt;
 &lt;/a&gt;</textarea>
 
@@ -274,3 +274,4 @@ function showHide(divID) {
     // console.log(e + ' line: ' + e.lineNumber + ' File: ' + e.fileName);
   }
 }
+
