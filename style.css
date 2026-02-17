@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 @font-face {
   font-family: 'CookieRun';
-  src: local('CookieRun Black'), local('CookieRun-Black'),
+  src:
+    local('CookieRun Black'),
+    local('CookieRun-Black'),
     url('fonts/CookieRun-Black.woff2') format('woff2'),
     url('fonts/CookieRun-Black.woff') format('woff');
   font-weight: 900;
@@ -12,7 +14,9 @@
 
 @font-face {
   font-family: 'CookieRun';
-  src: local('CookieRun Regular'), local('CookieRun-Regular'),
+  src:
+    local('CookieRun Regular'),
+    local('CookieRun-Regular'),
     url('fonts/CookieRun-Regular.woff2') format('woff2'),
     url('fonts/CookieRun-Regular.woff') format('woff');
   font-weight: normal;
@@ -22,7 +26,9 @@
 
 @font-face {
   font-family: 'CookieRun';
-  src: local('CookieRun Bold'), local('CookieRun-Bold'),
+  src:
+    local('CookieRun Bold'),
+    local('CookieRun-Bold'),
     url('fonts/CookieRun-Bold.woff2') format('woff2'),
     url('fonts/CookieRun-Bold.woff') format('woff');
   font-weight: bold;
@@ -49,7 +55,7 @@
 
   /* Text: */
   --font: Lexend Deca, sans-serif;
-  --heading-font: 'CookieRun', cursive;
+  --heading-font: 'CookieRun', Helvetica;
   --font-size: 16px;
 
   /* Other Settings: */
@@ -122,7 +128,7 @@ a:focus {
 /* -------------------------------------------------------- */
 
 .layout {
-  width: 1000px;
+  max-width: 1000px;
   display: grid;
   grid-gap: var(--margin);
   grid-template: 'header header' auto 'main rightSidebar' auto / auto var(--sidebar-width);
@@ -160,7 +166,7 @@ header {
 }
 
 .header-title {
-  font-size: 3.25em;
+  font-size: clamp(2em, 5vw, 3.25em);
   color: #3d67ff;
   font-weight: bold;
   background: -webkit-linear-gradient(#34abff, #00138d);
@@ -293,8 +299,8 @@ header nav {
 
 header nav ul {
   display: flex;
-  flex-wrap: wrap;
   margin: 0;
+  align-items: center;
 }
 
 header nav ul li {
@@ -471,38 +477,6 @@ main h6 {
 }
 
 /* -------------------------------------------------------- */
-/* CONTENT IMAGES */
-/* -------------------------------------------------------- */
-
-.image {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-}
-
-.full-width-image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.images {
-  display: flex;
-  width: calc(100% + 5px + 5px);
-  margin-left: -5px;
-  margin-right: -5px;
-}
-
-.images img {
-  width: 100%;
-  height: auto;
-  padding: 5px;
-  margin: 0;
-  overflow: hidden;
-}
-
-/* -------------------------------------------------------- */
 /* ACCESSIBILITY */
 /* -------------------------------------------------------- */
 
@@ -537,23 +511,8 @@ main h6 {
     grid-template: 'header' auto 'main' auto 'rightSidebar' auto / 1fr;
   }
 
-  aside {
-    padding: 9px;
-    font-size: 0.9em;
-  }
-
   nav {
     padding: 0;
-  }
-
-  nav > ul {
-    padding-top: 0.5em;
-  }
-
-  nav > ul li > a,
-  nav > ul li > details summary,
-  nav > ul li > strong {
-    padding: 0.5em;
   }
 
   main {
@@ -564,6 +523,7 @@ main h6 {
   div .landingdoll {
     float: none;
     margin: auto;
+    width: 100%;
   }
 
   .images {
@@ -649,5 +609,3 @@ span[class^='footnote'] {
   padding: 0.2em 0.5em;
   font-size: 90%;
 }
-
-
