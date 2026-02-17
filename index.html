@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>WELCOME, FOLKS!</title>
@@ -15,7 +15,7 @@
     <script>
       console.log(
         "%cTemplate generated with petrapixel's layout generator: https://petrapixel.neocities.org/coding/layout-generator",
-        'font-size: 14pt; color: #922a45; background: #ffd3ef'
+        'font-size: 14pt; color: #922a45; background: #ffd3ef',
       );
     </script>
 
@@ -28,13 +28,15 @@
         margin: 30px -50px -30px 0;
         background-image: url(./images/shadow\ milk\ says.png);
         background-size: contain;
+        background-repeat: no-repeat;
       }
 
       .speechbubble {
         color: black;
         position: absolute;
-        font-size: 1.2em;
-        width: 180px;
+        font-size: clamp(0.8em, 4vw, 1.2em);
+        max-width: 180px;
+        width: 45%;
         text-align: center;
         font-family: var(--heading-font);
         left: 25px;
@@ -69,10 +71,7 @@
           <p>
             Given the live service nature of Cookie Run: Kingdom, information presented here may
             become rapidly outdated. For a reliably up-to-date source on game information as it
-            releases, You should refer to the fan-run Cookie Run: Kingdom Wiki.
-            <small
-              ><i> (Wiki staff, PLEASE move off of Fandom, you deserve so much better.)</i></small
-            >
+            releases, You should refer to the fan-run Cookie Run Wiki.
           </p>
           <p>
             This site is managed purely for the love of the game by a single webmaster, and is
@@ -84,4 +83,3 @@
     </div>
   </body>
 </html>
-
