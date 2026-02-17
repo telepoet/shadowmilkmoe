@@ -81,7 +81,7 @@ body {
   min-height: 100vh;
   font-size: var(--font-size);
   margin: 0;
-  padding: var(--margin);
+  padding: 0;
   color: var(--text-color);
   font-family: var(--font);
   line-height: 1.2;
@@ -148,6 +148,7 @@ main {
 /* -------------------------------------------------------- */
 
 header {
+  margin-top: 10px;
   text-align: center;
   grid-area: header;
   font-size: 1.2em;
@@ -609,3 +610,4 @@ span[class^='footnote'] {
   padding: 0.2em 0.5em;
   font-size: 90%;
 }
+
