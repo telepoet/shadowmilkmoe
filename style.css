@@ -129,6 +129,7 @@ a:focus {
 
 .layout {
   max-width: 1000px;
+  width: 100%;
   display: grid;
   grid-gap: var(--margin);
   grid-template: 'header header' auto 'main rightSidebar' auto / auto var(--sidebar-width);
@@ -610,4 +611,5 @@ span[class^='footnote'] {
   padding: 0.2em 0.5em;
   font-size: 90%;
 }
+
 
