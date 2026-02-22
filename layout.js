@@ -80,13 +80,13 @@ function headerHTML() {
         </div>
           <hr>
         <div class="sidebar-section">
-              <div class="sidebar-title">to-do list</div>
             <blockquote>
-              <ul>
-              <li><b>image descriptions for screenreaders</b></li>
-              <li>relationships page</li>
-              <li>fount writeup</li>
-              </ul>
+            <h3>last updated:</h3>
+              <h4>02/21/26</h4><hr>
+                <ul>
+                  <li>added favorite fanworks page</li>
+                  <li>added changelog (you're reading it!)</li>
+                </ul>
             </blockquote>
             <div style="text-align:center">
               <img src="./images/sage.gif" style="width: 125px;" /><br />
@@ -94,10 +94,7 @@ function headerHTML() {
             </div>
         </div>
 
-         </aside>
-      <footer style="text-align:center">
-      <small><i>Shadow Milk Cookie and CookieRun: Kingdom © Devsisters Corp.<br />This content is not affiliated, sponsored or approved by Devsisters.</i></small>
-      </footer>`;
+         </aside>`;
 }
 
 /* Do not edit anything below this line unless you know what you're doing. */
@@ -276,6 +273,3 @@ function showHide(divID) {
     // console.log(e + ' line: ' + e.lineNumber + ' File: ' + e.fileName);
   }
 }
-
-
-
