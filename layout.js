@@ -82,7 +82,7 @@ function headerHTML() {
         <div class="sidebar-section">
             <blockquote>
             <h3>last updated:</h3>
-              <h4>02/21/26</h4><hr>
+              <h4>02/22/26</h4><hr>
                 <ul>
                   <li>added favorite fanworks page</li>
                   <li>added changelog (you're reading it!)</li>
@@ -273,3 +273,4 @@ function showHide(divID) {
     // console.log(e + ' line: ' + e.lineNumber + ' File: ' + e.fileName);
   }
 }
+
