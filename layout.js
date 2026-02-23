@@ -34,21 +34,21 @@ function headerHTML() {
 	                <ul>
 	                  <li><a href="/bio.html">biography</a></li>
                     <li><a href="/relationships.html">relationships</a></li>
-	                  <li><a href="/speculation.html">speculation & headcanons</a></li>
+	                  <li><a href="/speculation.html">speculation</a></li>
 	                  <li><a href="/localization.html">localization</a></li>
 	                </ul>
 	            </li>
                 <li>
 	                <strong tabindex="0">the game</strong>
 	                <ul>
-	                  <li><a href="/plot.html">story catch-up guide</a></li>
-	                  <li><a href="/tips.html">newcomer gameplay tips</a></li>
+	                  <li><a href="/plot.html">story catch-up</a></li>
+	                  <li><a href="/tips.html">newcomer tips</a></li>
 	                </ul>
 	            </li>
                 <li>
 	                <strong tabindex="0">extra</strong>
 	                <ul>
-                  	<li><a href="/fanrec.html">favorite fanworks</a></li>
+                  	<li><a href="/fanrec.html">fanworks</a></li>
 	                  <li><a href="/webmaster.html">webmaster</a></li>
 					  <li><a href="https://shadowmilkmoe.atabook.org/" target="_blank">guestbook</a></li>
 	                  <li><a href="/credits.html">credits</a></li>
@@ -82,7 +82,7 @@ function headerHTML() {
         <div class="sidebar-section">
             <blockquote>
             <h3>last updated:</h3>
-              <h4>02/22/26</h4><hr>
+              <h4>02/23/26</h4><hr>
                 <ul>
                   <li>added favorite fanworks page</li>
                   <li>added changelog (you're reading it!)</li>
@@ -273,4 +273,3 @@ function showHide(divID) {
     // console.log(e + ' line: ' + e.lineNumber + ' File: ' + e.fileName);
   }
 }
-
