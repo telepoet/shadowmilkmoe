@@ -314,7 +314,7 @@ header nav ul li {
 /* Subnavigation (Drop-Down): */
 
 header nav ul ul {
-  background: var(--content-background-color);
+  background: var(--background-color);
   display: none;
   position: absolute;
   top: 100%;
@@ -322,7 +322,7 @@ header nav ul ul {
   padding: 0.5em;
   z-index: 1;
   border: var(--border);
-  min-width: 150%;
+  max-width: 8em;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -519,6 +519,10 @@ main h6 {
     padding: 0;
   }
 
+  header nav ul ul {
+    left: -40px;
+  }
+
   main {
     max-height: none;
     padding: 15px;
@@ -613,4 +617,3 @@ span[class^='footnote'] {
   padding: 0.2em 0.5em;
   font-size: 90%;
 }
-
