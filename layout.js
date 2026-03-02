@@ -82,10 +82,9 @@ function headerHTML() {
         <div class="sidebar-section">
             <blockquote>
             <h3>last updated:</h3>
-              <h4>02/23/26</h4><hr>
+              <h4>03/02/26</h4><hr>
                 <ul>
-                  <li>added favorite fanworks page</li>
-                  <li>added changelog (you're reading it!)</li>
+                  <li>updated speculation (in accordance with new info from by-14)</li>
                 </ul>
             </blockquote>
             <div style="text-align:center">
