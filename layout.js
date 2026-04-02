@@ -84,6 +84,7 @@ function headerHTML() {
             <h3>last updated:</h3>
               <h4>04/02/26</h4><hr>
                 <ul>
+				  <li>happy april!</li>
                   <li>added <a href="plot.html">story catch-up guide</a> page</li>
                 </ul>
             </blockquote>
