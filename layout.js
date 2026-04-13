@@ -9,7 +9,6 @@ function loadLayoutByPetraPixel() {
   mainEl.insertAdjacentHTML('beforebegin', headerHTML());
   giveActiveClassToCurrentPage();
   themeToggle();
-  document.body.classList.add('layout-ready');
 }
 
 
