@@ -8,7 +8,9 @@ function loadLayoutByPetraPixel() {
   if (!mainEl) return;
   mainEl.insertAdjacentHTML('beforebegin', headerHTML());
   giveActiveClassToCurrentPage();
+  themeToggle();
 }
+
 
 const nesting = getNesting();
 
@@ -22,7 +24,7 @@ function headerHTML() {
       <header>
 
         <div class="header-content">
-	        <div class="header-title"><a href="/">shadowmilk.moe</a></div>
+	        <div class="header-title"><a href="/"></a></div>
             <div class="header-subtitle">a beast of deceit shrine and cookie run fansite</div>
 	        
 	        <!-- NAVIGATION -->
@@ -56,8 +58,9 @@ function headerHTML() {
 	            </li>
 	            </li>
 	          </ul>
+
+            <button type="button" class="theme-switch" aria-label="Change page theme">bup</button>
 	        </nav>
-        	
         </div>
       </header>
 
@@ -82,10 +85,10 @@ function headerHTML() {
         <div class="sidebar-section">
             <blockquote>
             <h3>last updated:</h3>
-              <h4>04/02/26</h4><hr>
+              <h4>04/13/26</h4><hr>
                 <ul>
-				  <li>happy april!</li>
-                  <li>added <a href="plot.html">story catch-up guide</a> page</li>
+                  <li>light mode toggle!</li>
+                  <li>minor spelling mistake</li>
                 </ul>
             </blockquote>
             <div style="text-align:center">
@@ -272,4 +275,39 @@ function showHide(divID) {
   } catch (e) {
     // console.log(e + ' line: ' + e.lineNumber + ' File: ' + e.fileName);
   }
+}
+
+function themeToggle() {
+const DEFAULT_THEME = 'dark';
+
+const toggleSwitch = document.querySelector('.theme-switch');
+const savedTheme = localStorage.getItem('theme');
+
+// Use saved theme or fallback to default
+const theme = savedTheme || DEFAULT_THEME;
+
+// Apply theme on load
+document.documentElement.setAttribute('data-theme', theme);
+
+// Update button text based on theme
+function updateButtonText(currentTheme) {
+    toggleSwitch.textContent =
+        currentTheme === 'dark' ? '☀︎' : '⏾';
+}
+
+// Initial text
+updateButtonText(theme);
+
+function switchTheme() {
+    const currentTheme =
+        document.documentElement.getAttribute('data-theme') || DEFAULT_THEME;
+
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    updateButtonText(newTheme);
+}
+toggleSwitch.addEventListener('click', switchTheme);
 }
