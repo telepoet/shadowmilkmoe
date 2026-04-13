@@ -27,15 +27,15 @@
       }
 
       .bioimg {
-        background-color: #28479e;
+        background-color: var(--bio-img);
       }
 
       .nameplate {
         padding: 10px;
-        background-color: #0d1939;
-        border: 4px ridge #719bff;
-        color: #c9e8ff;
-        text-shadow: 0 0 3px #41e6ff;
+        background-color: var(--bio-dark);
+        border: var(--bio-border);
+        color: var(--bio-title);
+        text-shadow: var(--bio-shadow);
         text-align: center;
       }
 
@@ -51,16 +51,15 @@
       table,
       th,
       td {
-        border: 2px solid #28479e;
+        border: 2px solid var(--bio-img);
         border-collapse: collapse;
       }
 
       th {
         width: 35%;
-        background-color: #0d1939;
+        background-color: var(--bio-dark);
         font-weight: bold;
-        color: #ffb587;
-        text-shadow: 0 0 2px #ac3333;
+        color: var(--hr-text);
         font-size: 1.05em;
         font-variant: small-caps;
       }
