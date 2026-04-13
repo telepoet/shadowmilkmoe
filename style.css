@@ -48,8 +48,10 @@
   --padding: 10px 15px;
   --round-borders: 5px;
   --sidebar-width: 250px;
+}
 
 /* DARK MODE */
+[data-theme="dark"] {
   --body-background-color:#081030;
   --background-color: #081030;
   --content-background-color: #0c1f54;
@@ -59,7 +61,6 @@
   --selection:#550aa4;
   --hr:2px dashed #3c5eb9;
   --blockhr:1px dashed #253f88;
-  --bg-pattern: url('./images/bg.png');
   --footnote-bg: hsla(11, 100%, 9%, 0.5);
   --footnote-border: 2px dotted #d89250;
   /* text colors */
@@ -94,7 +95,6 @@
   --selection:#f2a378;
   --hr:2px dashed #f19538;
   --blockhr:1px dashed #dc9248;
-  --bg-pattern: url('./images/bglight.png');
   --footnote-bg: hsla(210, 100%, 73%, 0.416);
   --footnote-border: 2px dotted #3f3cff;
   /* text colors */
@@ -126,6 +126,20 @@
   box-sizing: border-box;
 }
 
+html{
+  background: var(--body-background-color);
+  background-size: 180px;
+  background-repeat: repeat;
+}
+
+html[data-theme="dark"] {
+  background-image: url('./images/bg.png');
+}
+
+html[data-theme="light"] {
+  background-image: url('./images/bglight.png');
+}
+
 body {
   display: flex;
   align-items: flex-start;
@@ -137,9 +151,6 @@ body {
   color: var(--text-color);
   font-family: var(--font);
   line-height: 1.2;
-  background: var(--body-background-color);
-  background-image: var(--bg-pattern);
-  background-size: 180px;
 }
 
 ::selection {
