@@ -9,6 +9,7 @@ function loadLayoutByPetraPixel() {
   mainEl.insertAdjacentHTML('beforebegin', headerHTML());
   giveActiveClassToCurrentPage();
   themeToggle();
+  document.body.classList.add('layout-ready');
 }
 
 
@@ -278,36 +279,25 @@ function showHide(divID) {
 }
 
 function themeToggle() {
-const DEFAULT_THEME = 'dark';
-
 const toggleSwitch = document.querySelector('.theme-switch');
-const savedTheme = localStorage.getItem('theme');
 
-// Use saved theme or fallback to default
-const theme = savedTheme || DEFAULT_THEME;
-
-// Apply theme on load
-document.documentElement.setAttribute('data-theme', theme);
-
-// Update button text based on theme
 function updateButtonText(currentTheme) {
     toggleSwitch.textContent =
         currentTheme === 'dark' ? '☀︎' : '⏾';
 }
 
-// Initial text
-updateButtonText(theme);
+updateButtonText(document.documentElement.getAttribute('data-theme'));
 
 function switchTheme() {
     const currentTheme =
-        document.documentElement.getAttribute('data-theme') || DEFAULT_THEME;
+        document.documentElement.getAttribute('data-theme');
 
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
-
     updateButtonText(newTheme);
 }
+
 toggleSwitch.addEventListener('click', switchTheme);
 }
