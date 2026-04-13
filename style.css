@@ -122,15 +122,6 @@
 /* BASICS */
 /* -------------------------------------------------------- */
 
-body {
-  opacity: 0;
-}
-
-body.layout-ready {
-  opacity: 1;
-  transition: opacity 0.8s ease;
-}
-
 * {
   box-sizing: border-box;
 }
