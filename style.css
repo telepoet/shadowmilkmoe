@@ -120,6 +120,15 @@
 /* BASICS */
 /* -------------------------------------------------------- */
 
+body {
+  opacity: 0;
+}
+
+body.layout-ready {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -689,3 +698,4 @@ span[class^='footnote'] {
   padding: 0.2em 0.5em;
   font-size: 90%;
 }
+
