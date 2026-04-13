@@ -40,30 +40,80 @@
 /* VARIABLES */
 /* -------------------------------------------------------- */
 
-/* Variables are used like this: var(--text-color) */
 :root {
-  /* Background Colors: */
+  --font: Lexend Deca, sans-serif;
+  --heading-font: 'CookieRun', Helvetica;
+  --font-size: 16px;
+  --margin: 10px;
+  --padding: 10px 15px;
+  --round-borders: 5px;
+  --sidebar-width: 250px;
+
+/* DARK MODE */
   --background-color: #081030;
   --content-background-color: #0c1f54;
   --sidebar-background-color: #0c1f54;
-
-  /* Text Colors: */
+  --border: 5px ridge #2d4da0;
+  --blockquote: rgba(0, 0, 0, 0.4);
+  --selection:#550aa4;
+  --hr:2px dashed #3c5eb9;
+  --blockhr:1px dashed #253f88;
+  --bg-pattern: url('./images/bg.png');
+  --footnote-bg: hsla(11, 100%, 9%, 0.5);
+  --footnote-border: 2px dotted #d89250;
+  /* text colors */
   --text-color: #ffffff;
   --sidebar-text-color: #ffffff;
   --link-color: #f48b65;
   --link-color-hover: #6ceeff;
+  --mark-shadow: 0px 0px 4px #4a56ff;
+  --mark-text: #85cafc;
+  --small-text: #9ec1da;
+  --headertext: 'shadowmilk.moe';
+  --headercolor: -webkit-linear-gradient(#34abff, #00138d);
+  --headerstroke: 2px #ddebff;
+  --footnote-text: #fee5ce;
+  /* bio */
+  --bio-img: #28479e;
+  --bio-dark: #0d1939;
+  --hr-text: #ffb587;
+  --bio-border: 4px ridge #719bff;
+  --bio-title: #c9e8ff;
+  --bio-shadow: 0 0 3px #41e6ff;
+}
 
-  /* Text: */
-  --font: Lexend Deca, sans-serif;
-  --heading-font: 'CookieRun', Helvetica;
-  --font-size: 16px;
-
-  /* Other Settings: */
-  --margin: 10px;
-  --padding: 10px 15px;
-  --border: 5px ridge #2d4da0;
-  --round-borders: 5px;
-  --sidebar-width: 250px;
+/* LIGHT MODE */
+[data-theme="light"] {
+  --background-color: #feeec7;
+  --content-background-color: #f9d79d;
+  --sidebar-background-color: #f9d79d;
+  --border: 5px ridge #b5765a;
+  --blockquote: rgba(255, 255, 255, 0.4);
+  --selection:#f2a378;
+  --hr:2px dashed #f19538;
+  --blockhr:1px dashed #dc9248;
+  --bg-pattern: url('./images/bglight.png');
+  --footnote-bg: hsla(210, 100%, 73%, 0.416);
+  --footnote-border: 2px dotted #3f3cff;
+  /* text colors */
+  --text-color: #6a301f;
+  --sidebar-text-color: #6a301f;
+  --link-color: #4a60ef;
+  --link-color-hover: #a35cff;
+  --mark-shadow: 0px 0px 4px #bca3ff;
+  --mark-text: #715fa5;
+  --small-text: #a15347;
+  --headertext: 'purevanilla.moe';
+  --headercolor: -webkit-linear-gradient(#fffbbe, #ffa332);
+  --headerstroke: 2px #b05b3e;
+  --footnote-text: #031376;
+  /* bio */
+    --bio-img: #f6b866;
+    --bio-dark: #ffd388;
+    --hr-text: #6e6eb6;
+    --bio-border: 4px ridge #e98f65;
+    --bio-title: #3e4b95;
+    --bio-shadow: 0 0 3px #e284e9;
 }
 
 /* -------------------------------------------------------- */
@@ -86,24 +136,24 @@ body {
   font-family: var(--font);
   line-height: 1.2;
   background: var(--background-color);
-  background-image: url('./images/bg.png');
+  background-image: var(--bg-pattern);
   background-size: 180px;
 }
 
 ::selection {
   /* (Text highlighted by the user) */
-  background: #550aa4;
+  background: var(--selection);
 }
 
 mark {
   background: none;
-  text-shadow: 0px 0px 4px #4a56ff;
-  color: #85cafc;
+  text-shadow: var(--mark-shadow);
+  color: var(--mark-text);
   font-weight: bold;
 }
 
 small {
-  color: #9ec1da;
+  color: var(--small-text);
   font-style: italic;
 }
 
@@ -170,10 +220,13 @@ header {
   font-size: clamp(2em, 5vw, 3.25em);
   color: #3d67ff;
   font-weight: bold;
-  background: -webkit-linear-gradient(#34abff, #00138d);
+  background: var(--headercolor);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px #ddebff;
+  -webkit-text-stroke: var(--headerstroke);
+}
+.header-title::before {
+  content: var(--headertext);
 }
 
 .header-title a {
@@ -181,17 +234,33 @@ header {
 }
 
 .header-subtitle {
-  color: #72a8ff;
-  text-shadow: 0 0 3px #2377ff;
+  color: var(--mark-text);
+  text-shadow: var(--mark-shadow);
   padding-bottom: 15px;
   font-style: italic;
 }
 
-nav li:not(li li) {
+nav li:not(li li), .theme-switch {
   text-align: center;
   background-color: var(--background-color);
   border-radius: var(--round-borders);
   margin: 0 8px;
+}
+
+.theme-switch {
+  padding: 5px 10px;
+  color: var(--link-color);
+  font-family: var(--font);
+  font-size: 1.5em;
+  border: none;
+  height: 33px;
+  line-height: 0;
+  text-align: center;
+}
+
+.theme-switch:hover {
+  cursor:pointer;
+  color: var(--link-color-hover);
 }
 
 /* -------------------------------------------------------- */
@@ -228,7 +297,7 @@ aside {
 }
 
 .sidebar-section blockquote {
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--blockquote);
   padding: 10px;
   margin: 1em 0;
   border-radius: 10px;
@@ -245,7 +314,7 @@ aside {
 
 .sidebar-section blockquote hr {
   margin: 0.5em 0 0 0;
-  border-top: 1px dashed #253f88;
+  border-top: var(--blockhr);
 }
 /* Site Button: */
 
@@ -299,6 +368,9 @@ nav > ul li > details.active summary {
 
 header nav {
   margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header nav ul {
@@ -388,7 +460,7 @@ main ol {
 main blockquote {
   font-family: var(--heading-font);
   font-size: 1.02em;
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--blockquote);
   padding: 15px;
   margin: 1em 1em;
   border-radius: 10px;
@@ -409,7 +481,7 @@ main center {
 
 hr {
   border: 0;
-  border-top: 2px dashed #3c5eb9;
+  border-top: var(--hr);
   margin: 1em 2em;
 }
 
@@ -611,9 +683,9 @@ span[class^='footnote'] {
 .tipContent {
   /* very basic formatting of the footnote */
   display: table-cell;
-  border: 2px dotted #d89250;
-  background-color: hsla(11, 100%, 9%, 0.5);
-  color: #fee5ce;
+  border: var(--footnote-border);
+  background-color: var(--footnote-bg);
+  color: var(--footnote-text);
   padding: 0.2em 0.5em;
   font-size: 90%;
 }
