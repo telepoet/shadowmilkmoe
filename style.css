@@ -214,7 +214,7 @@ main {
 header {
   text-align: center;
   grid-area: header;
-  font-size: 1.2em;
+  font-size: clamp(1em, 3.5vw, 1.2em);
   border: var(--border);
   border-radius: var(--round-borders);
   background: var(--content-background-color);
@@ -382,6 +382,8 @@ nav > ul li > details.active summary {
 header nav {
   margin-bottom: 0;
     display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
     align-items: center;
     justify-content: space-between;
 }
