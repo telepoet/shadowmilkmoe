@@ -1,16 +1,15 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   loadLayoutByPetraPixel();
   SetupTips();
 });
 
 function loadLayoutByPetraPixel() {
-  const mainEl = document.querySelector('main');
+  const mainEl = document.querySelector("main");
   if (!mainEl) return;
-  mainEl.insertAdjacentHTML('beforebegin', headerHTML());
+  mainEl.insertAdjacentHTML("beforebegin", headerHTML());
   giveActiveClassToCurrentPage();
   themeToggle();
 }
-
 
 const nesting = getNesting();
 
@@ -85,10 +84,9 @@ function headerHTML() {
         <div class="sidebar-section">
             <blockquote>
             <h3>last updated:</h3>
-              <h4>04/13/26</h4><hr>
+              <h4>05/29/26</h4><hr>
                 <ul>
-                  <li>light mode toggle!</li>
-                  <li>minor spelling mistake</li>
+                  <li>i've been meaning to add this quote js for literal months</li>
                 </ul>
             </blockquote>
             <div style="text-align:center">
@@ -103,32 +101,32 @@ function headerHTML() {
 /* Do not edit anything below this line unless you know what you're doing. */
 
 function giveActiveClassToCurrentPage() {
-  const els = document.querySelectorAll('nav a');
+  const els = document.querySelectorAll("nav a");
   [...els].forEach((el) => {
-    const href = el.getAttribute('href').replace('.html', '').replace('#', '');
-    const pathname = window.location.pathname.replace('/public/', '');
-    const currentHref = window.location.href.replace('.html', '') + 'END';
+    const href = el.getAttribute("href").replace(".html", "").replace("#", "");
+    const pathname = window.location.pathname.replace("/public/", "");
+    const currentHref = window.location.href.replace(".html", "") + "END";
 
     /* Homepage */
-    if (href == '/' || href == '/index.html') {
-      if (pathname == '/') {
-        el.classList.add('active');
+    if (href == "/" || href == "/index.html") {
+      if (pathname == "/") {
+        el.classList.add("active");
       }
     } else {
       /* Other pages */
-      if (currentHref.includes(href + 'END')) {
-        el.classList.add('active');
+      if (currentHref.includes(href + "END")) {
+        el.classList.add("active");
 
         /* Subnavigation: */
 
-        if (el.closest('details')) {
-          el.closest('details').setAttribute('open', 'open');
-          el.closest('details').classList.add('active');
+        if (el.closest("details")) {
+          el.closest("details").setAttribute("open", "open");
+          el.closest("details").classList.add("active");
         }
 
-        if (el.closest('ul')) {
-          if (el.closest('ul').closest('ul')) {
-            el.closest('ul').closest('ul').classList.add('active');
+        if (el.closest("ul")) {
+          if (el.closest("ul").closest("ul")) {
+            el.closest("ul").closest("ul").classList.add("active");
           }
         }
       }
@@ -137,16 +135,16 @@ function giveActiveClassToCurrentPage() {
 }
 
 function getNesting() {
-  const numberOfSlashes = window.location.pathname.split('/').length - 1;
-  if (numberOfSlashes == 1) return './';
-  return '../'.repeat(numberOfSlashes - 1);
+  const numberOfSlashes = window.location.pathname.split("/").length - 1;
+  if (numberOfSlashes == 1) return "./";
+  return "../".repeat(numberOfSlashes - 1);
 }
 
 function SetupTips() {
   let fnNumber = 0;
-  let myid = '';
-  let clsStart = '',
-    clsEnd = '';
+  let myid = "";
+  let clsStart = "",
+    clsEnd = "";
   let myClassList, myClass;
   let baseHide, baseFn;
   let myFn,
@@ -158,19 +156,22 @@ function SetupTips() {
 
   try {
     // Get the footnote Sections = all articles which include an id that begins with "Footnote"
-    const fnotesSections = document.querySelectorAll('article[id^=Footnote]');
+    const fnotesSections = document.querySelectorAll("article[id^=Footnote]");
     let arrSections = Array.from(fnotesSections);
     for (i = 0, len = arrSections.length; i < len; i++) {
       myDiv = arrSections[i];
 
       // Add a hidden link to skip the section
       myDiv.insertAdjacentHTML(
-        'beforebegin',
+        "beforebegin",
         `<a href="#End-of-${myDiv.id}"><span class="sr-only">Skip footnote section</span></a>`,
       );
 
       // Add the hidden div to where that link goes to
-      myDiv.insertAdjacentHTML('afterend', `<div class="sr-only" id="End-of-${myDiv.id}"></div>`);
+      myDiv.insertAdjacentHTML(
+        "afterend",
+        `<div class="sr-only" id="End-of-${myDiv.id}"></div>`,
+      );
     }
   } catch (e) {
     // console.log(e + ' line: ' + e.lineNumber + ' File: ' + e.fileName);
@@ -178,7 +179,7 @@ function SetupTips() {
 
   // Now do the footnotes = all spans which include a class name that begins with "footnote"
   try {
-    const fnotes = document.querySelectorAll('span[class^=footnote]');
+    const fnotes = document.querySelectorAll("span[class^=footnote]");
     for (i = 0, len = fnotes.length; i < len; i++) {
       myFn = fnotes[i];
       myClassList = myFn.classList;
@@ -192,22 +193,22 @@ function SetupTips() {
 
         // Now process the footnotes
         clsStart = myClass.substr(0, 8);
-        if (clsStart === 'footnote') {
+        if (clsStart === "footnote") {
           // We have a footnote
           fnNumber = i + 1; // Array starts with 0; we want notes to start with 1
           myid = `Fn_${fnNumber}_${clsEnd}`; // Unique footnote reference
 
           myFn.id = myid; // Set the id of the footnote
-          myFn.classList.add('hideTip'); // Hide the footnote in the text
-          myFn.classList.add('fnWrapper'); // Add class for wrapping the tooltip
-          myFn.setAttribute('role', 'presentation'); // Add ARIA attribute for accessibility
+          myFn.classList.add("hideTip"); // Hide the footnote in the text
+          myFn.classList.add("fnWrapper"); // Add class for wrapping the tooltip
+          myFn.setAttribute("role", "presentation"); // Add ARIA attribute for accessibility
 
           fnContent = myFn.innerHTML; // Copy all footnote content that is inside the footnote tag
 
           // Add the footnote reference to the text
           // Note that the %20 in the href inserts spaces so the link appears nicely in browser status bar as "# Show Footnote 1", though there is no actual link.
           myFn.insertAdjacentHTML(
-            'beforebegin',
+            "beforebegin",
             `<a class="fnNum" href="#Show%20Footnote%20${fnNumber} " title="Show/Hide footnote ${fnNumber} " id="${myid}a" onclick="showHide(&quot;${myid}&quot;);return false;">[<span class="sr-only">Footnote </span><span class="fnNumIn">${fnNumber}</span>]</a>`,
           );
 
@@ -219,7 +220,9 @@ function SetupTips() {
           try {
             // Add the footnote to the appropriate footnote section
             let FootnoteSection;
-            if ((FootnoteSection = document.getElementById(`Footnotes${clsEnd}`))) {
+            if (
+              (FootnoteSection = document.getElementById(`Footnotes${clsEnd}`))
+            ) {
               // insert footnote number and the footnote where the footnotes are required to appear
               FootnoteSection.innerHTML += `<p><a class="fnNumBase" href="#${myid}a" title="Footnote location">[<span class="sr-only">Location of footnote </span><span class="fnNumIn">${fnNumber}</span>]</a> <span role="note" id = "${myid}Base" class="fnTextBase">${fnContent}</span></p>`;
             }
@@ -231,7 +234,7 @@ function SetupTips() {
 
           // For older version, if older footnotes have not been updated - Remove the "hidden" (Footnote: and ) opening and closing tags of the footnotes in the collective section
           baseFn = document.getElementById(`${myid}Base`);
-          baseHide = baseFn.getElementsByClassName('fnHide');
+          baseHide = baseFn.getElementsByClassName("fnHide");
           while (baseHide[0]) {
             baseFn.removeChild(baseHide[0]);
           }
@@ -240,9 +243,9 @@ function SetupTips() {
     }
 
     // For older version, if older footnotes have not been updated - Make the appropriate parts of the footnotes invisible except to screen readers
-    let fnHides = document.getElementsByClassName('fnHide');
+    let fnHides = document.getElementsByClassName("fnHide");
     [].forEach.call(fnHides, function (el) {
-      el.classList.add('sr-only');
+      el.classList.add("sr-only");
     });
   } catch (e) {
     // console.log(e + ' line: ' + e.lineNumber + ' File: ' + e.fileName);
@@ -254,22 +257,23 @@ function SetupTips() {
 function showHide(divID) {
   let myDiv = document.getElementById(divID);
   try {
-    if (myDiv.classList.contains('hideTip')) {
-      myDiv.classList.remove('hideTip');
-      myDiv.classList.add('unhideTip');
-      if (divID.substr(0, 3) === 'Fn_') {
+    if (myDiv.classList.contains("hideTip")) {
+      myDiv.classList.remove("hideTip");
+      myDiv.classList.add("unhideTip");
+      if (divID.substr(0, 3) === "Fn_") {
         // For if tip is a footnote replace number with an x
-        document.getElementById(divID + 'a').innerHTML = '[<span class="fnNumIn">&#x2716;</span>]';
+        document.getElementById(divID + "a").innerHTML =
+          '[<span class="fnNumIn">&#x2716;</span>]';
       }
     } else {
-      myDiv.classList.remove('unhideTip');
-      myDiv.classList.add('hideTip');
-      if (divID.substr(0, 3) === 'Fn_') {
+      myDiv.classList.remove("unhideTip");
+      myDiv.classList.add("hideTip");
+      if (divID.substr(0, 3) === "Fn_") {
         // For if tip is a footnote, restore the reference number
-        document.getElementById(divID + 'a').innerHTML =
+        document.getElementById(divID + "a").innerHTML =
           '[<span class="sr-only">Footnote </span><span class="fnNumIn">' +
-          divID.substr(3).split('_')[0] +
-          '</span>]';
+          divID.substr(3).split("_")[0] +
+          "</span>]";
       }
     }
   } catch (e) {
@@ -278,25 +282,23 @@ function showHide(divID) {
 }
 
 function themeToggle() {
-const toggleSwitch = document.querySelector('.theme-switch');
+  const toggleSwitch = document.querySelector(".theme-switch");
 
-function updateButtonText(currentTheme) {
-    toggleSwitch.textContent =
-        currentTheme === 'dark' ? '☀︎' : '⏾';
-}
+  function updateButtonText(currentTheme) {
+    toggleSwitch.textContent = currentTheme === "dark" ? "☀︎" : "⏾";
+  }
 
-updateButtonText(document.documentElement.getAttribute('data-theme'));
+  updateButtonText(document.documentElement.getAttribute("data-theme"));
 
-function switchTheme() {
-    const currentTheme =
-        document.documentElement.getAttribute('data-theme');
+  function switchTheme() {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
 
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
 
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
     updateButtonText(newTheme);
-}
+  }
 
-toggleSwitch.addEventListener('click', switchTheme);
+  toggleSwitch.addEventListener("click", switchTheme);
 }

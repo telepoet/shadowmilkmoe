@@ -11,7 +11,7 @@
 
     <script>
       document.documentElement.dataset.theme =
-      localStorage.getItem('theme') || 'dark';
+        localStorage.getItem("theme") || "dark";
     </script>
 
     <link href="./style.css" rel="stylesheet" />
@@ -20,7 +20,7 @@
     <script>
       console.log(
         "%cTemplate generated with petrapixel's layout generator: https://petrapixel.neocities.org/coding/layout-generator",
-        'font-size: 14pt; color: #922a45; background: #ffd3ef',
+        "font-size: 14pt; color: #922a45; background: #ffd3ef",
       );
     </script>
 
@@ -36,7 +36,7 @@
         background-repeat: no-repeat;
       }
 
-      .speechbubble {
+      #speechbubble {
         color: black;
         position: absolute;
         font-size: clamp(0.8em, 4vw, 1.2em);
@@ -58,39 +58,61 @@
           <h1>Welcome, folks!</h1>
           <hr />
           <p>
-            <mark>shadowmilk.moe</mark> is a fansite dedicated to the titular antagonist and
-            playable character from the mobile game <b>Cookie Run: Kingdom</b> (hereafter abbr.
-            CRK), developed and published by <b style="color: #ff6f08">DEVSISTERS</b>. Outside of
-            coverage on all things <mark>Shadow Milk Cookie</mark>, here you can also expect to find
-            speculative analysis, relationship discussion (with an admitted bias towards a
-            particular Ancient Hero), and
-            recommendations for fanworks featuring the Beast of Deceit, as well as some guidance for
-            newcomers on how to catch up on the main storyline and/or get into playing CR:K in
-            general.
+            <mark>shadowmilk.moe</mark> is a fansite dedicated to the titular
+            antagonist and playable character from the mobile game
+            <b>Cookie Run: Kingdom</b> (hereafter abbr. CRK), developed and
+            published by <b style="color: #ff6f08">DEVSISTERS</b>. Outside of
+            coverage on all things <mark>Shadow Milk Cookie</mark>, here you can
+            also expect to find speculative analysis, relationship discussion
+            (with an admitted bias towards a particular Ancient Hero), and
+            recommendations for fanworks featuring the Beast of Deceit, as well
+            as some guidance for newcomers on how to catch up on the main
+            storyline and/or get into playing CR:K in general.
           </p>
           <hr />
           <div class="landingdoll">
-            <div class="speechbubble">Trust everything you read on the internet!</div>
+            <div id="speechbubble"></div>
           </div>
           <p>
-            Given the live service nature of Cookie Run: Kingdom, information presented here may
-            become rapidly outdated. For coverage of game information as it releases, You should
-            refer to the <a href="https://cookierun.wiki/">Cookie Run Wiki</a>.
+            Given the live service nature of Cookie Run: Kingdom, information
+            presented here may become rapidly outdated. For coverage of game
+            information as it releases, You should refer to the
+            <a href="https://cookierun.wiki/">Cookie Run Wiki</a>.
           </p>
           <p>
-            This site is managed purely for the love of the game by a single webmaster, and is
-            inspired by the many web 2.0 character shrines of eld. If you have any questions or
-            concerns, please feel free to <a href="/webmaster.html">contact me</a> or sign the
-            <a href="https://shadowmilkmoe.atabook.org" target="_blank">guestbook</a>!
+            This site is managed purely for the love of the game by a single
+            webmaster, and is inspired by the many web 2.0 character shrines of
+            eld. If you have any questions or concerns, please feel free to
+            <a href="/webmaster.html">contact me</a> or sign the
+            <a href="https://shadowmilkmoe.atabook.org" target="_blank"
+              >guestbook</a
+            >!
           </p>
           <small>
             <i>
-              (The contents of this website are not affiliated, sponsored or approved by
-              Devsisters.)
+              (The contents of this website are not affiliated, sponsored or
+              approved by Devsisters.)
             </i>
           </small>
         </section>
       </main>
     </div>
+    <script>
+      const quotes = [
+        "Well, well, well! Are we ready for some tomfoolery? 	",
+        "...You're back! What do ya want from me, huh?",
+        "Trust everything you read on the internet!",
+        "Press Alt+F4 for free Beast Cookie soulstones!",
+        "Lying about my past identity since 2024!",
+        "I'm somehow still periodically in the Arena meta!",
+        "Fear the day I'm made playable into OvenBreak.",
+        "Find a 404 page for a surprise!",
+      ];
+
+      !(function newFact() {
+        const randomQ = Math.floor(Math.random() * quotes.length);
+        document.getElementById("speechbubble").innerHTML = quotes[randomQ];
+      })();
+    </script>
   </body>
 </html>
