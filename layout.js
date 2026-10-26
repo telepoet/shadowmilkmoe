@@ -35,7 +35,7 @@ function headerHTML() {
 	                <ul>
 	                  <li><a href="/bio.html">biography</a></li>
                     <li><a href="/relationships.html">relationships</a></li>
-	                  <li><a href="/speculation.html">speculation</a></li>
+	                  <li><a href="/discussion.html">discussion</a></li>
 	                  <li><a href="/localization.html">localization</a></li>
 	                </ul>
 	            </li>
