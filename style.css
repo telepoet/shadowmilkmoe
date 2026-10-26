@@ -1,36 +1,36 @@
-@import url('https://glen-players.gitlab.io/06/i/icons.css');
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url("https://glen-players.gitlab.io/06/i/icons.css");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
 @font-face {
-  font-family: 'CookieRun';
+  font-family: "CookieRun";
   src:
-    local('CookieRun Black'),
-    local('CookieRun-Black'),
-    url('fonts/CookieRun-Black.woff2') format('woff2'),
-    url('fonts/CookieRun-Black.woff') format('woff');
+    local("CookieRun Black"),
+    local("CookieRun-Black"),
+    url("fonts/CookieRun-Black.woff2") format("woff2"),
+    url("fonts/CookieRun-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'CookieRun';
+  font-family: "CookieRun";
   src:
-    local('CookieRun Regular'),
-    local('CookieRun-Regular'),
-    url('fonts/CookieRun-Regular.woff2') format('woff2'),
-    url('fonts/CookieRun-Regular.woff') format('woff');
+    local("CookieRun Regular"),
+    local("CookieRun-Regular"),
+    url("fonts/CookieRun-Regular.woff2") format("woff2"),
+    url("fonts/CookieRun-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'CookieRun';
+  font-family: "CookieRun";
   src:
-    local('CookieRun Bold'),
-    local('CookieRun-Bold'),
-    url('fonts/CookieRun-Bold.woff2') format('woff2'),
-    url('fonts/CookieRun-Bold.woff') format('woff');
+    local("CookieRun Bold"),
+    local("CookieRun-Bold"),
+    url("fonts/CookieRun-Bold.woff2") format("woff2"),
+    url("fonts/CookieRun-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -42,7 +42,7 @@
 
 :root {
   --font: Lexend Deca, sans-serif;
-  --heading-font: 'CookieRun', Helvetica;
+  --heading-font: "CookieRun", Helvetica;
   --font-size: 16px;
   --margin: 10px;
   --padding: 10px 15px;
@@ -52,15 +52,15 @@
 
 /* DARK MODE */
 [data-theme="dark"] {
-  --body-background-color:#081030;
+  --body-background-color: #081030;
   --background-color: #081030;
   --content-background-color: #0c1f54;
   --sidebar-background-color: #0c1f54;
   --border: 5px ridge #2d4da0;
   --blockquote: rgba(0, 0, 0, 0.4);
-  --selection:#550aa4;
-  --hr:2px dashed #3c5eb9;
-  --blockhr:1px dashed #253f88;
+  --selection: #550aa4;
+  --hr: 2px dashed #3c5eb9;
+  --blockhr: 1px dashed #253f88;
   --footnote-bg: hsla(11, 100%, 9%, 0.5);
   --footnote-border: 2px dotted #d89250;
   /* text colors */
@@ -71,7 +71,7 @@
   --mark-shadow: 0px 0px 4px #4a56ff;
   --mark-text: #85cafc;
   --small-text: #9ec1da;
-  --headertext: 'shadowmilk.moe';
+  --headertext: "shadowmilk.moe";
   --headercolor: -webkit-linear-gradient(#34abff, #00138d);
   --headerstroke: 2px #ddebff;
   --footnote-text: #fee5ce;
@@ -92,9 +92,9 @@
   --sidebar-background-color: #f9d79d;
   --border: 5px ridge #b5765a;
   --blockquote: rgba(255, 255, 255, 0.4);
-  --selection:#f2a378;
-  --hr:2px dashed #f19538;
-  --blockhr:1px dashed #dc9248;
+  --selection: #f2a378;
+  --hr: 2px dashed #f19538;
+  --blockhr: 1px dashed #dc9248;
   --footnote-bg: hsla(210, 100%, 73%, 0.416);
   --footnote-border: 2px dotted #3f3cff;
   /* text colors */
@@ -105,17 +105,17 @@
   --mark-shadow: 0px 0px 4px #bca3ff;
   --mark-text: #715fa5;
   --small-text: #a15347;
-  --headertext: 'purevanilla.moe';
+  --headertext: "purevanilla.moe";
   --headercolor: -webkit-linear-gradient(#fffbbe, #ffa332);
   --headerstroke: 2px #b05b3e;
   --footnote-text: #031376;
   /* bio */
-    --bio-img: #f6b866;
-    --bio-dark: #ffd388;
-    --hr-text: #6e6eb6;
-    --bio-border: 4px ridge #e98f65;
-    --bio-title: #3e4b95;
-    --bio-shadow: 0 0 3px #e284e9;
+  --bio-img: #f6b866;
+  --bio-dark: #ffd388;
+  --hr-text: #6e6eb6;
+  --bio-border: 4px ridge #e98f65;
+  --bio-title: #3e4b95;
+  --bio-shadow: 0 0 3px #e284e9;
 }
 
 /* -------------------------------------------------------- */
@@ -126,18 +126,18 @@
   box-sizing: border-box;
 }
 
-html{
+html {
   background: var(--body-background-color);
   background-size: 180px;
   background-repeat: repeat;
 }
 
 html[data-theme="dark"] {
-  background-image: url('./images/bg.png');
+  background-image: url("./images/bg.png");
 }
 
 html[data-theme="light"] {
-  background-image: url('./images/bglight.png');
+  background-image: url("./images/bglight.png");
 }
 
 body {
@@ -195,7 +195,9 @@ a:focus {
   width: 100%;
   display: grid;
   grid-gap: var(--margin);
-  grid-template: 'header header' auto 'main rightSidebar' auto / auto var(--sidebar-width);
+  grid-template: "header header" auto "main rightSidebar" auto / auto var(
+      --sidebar-width
+    );
 }
 
 main {
@@ -253,7 +255,8 @@ header {
   font-style: italic;
 }
 
-nav li:not(li li), .theme-switch {
+nav li:not(li li),
+.theme-switch {
   text-align: center;
   background-color: var(--background-color);
   border-radius: var(--round-borders);
@@ -272,7 +275,7 @@ nav li:not(li li), .theme-switch {
 }
 
 .theme-switch:hover {
-  cursor:pointer;
+  cursor: pointer;
   color: var(--link-color-hover);
 }
 
@@ -381,11 +384,11 @@ nav > ul li > details.active summary {
 
 header nav {
   margin-bottom: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header nav ul {
@@ -599,7 +602,7 @@ main h6 {
 @media (max-width: 800px) {
   .layout {
     width: 100%;
-    grid-template: 'header' auto 'main' auto 'rightSidebar' auto / 1fr;
+    grid-template: "header" auto "main" auto "rightSidebar" auto / 1fr;
   }
 
   nav {
@@ -639,8 +642,8 @@ main h6 {
 /* -------------------------------------------------------- */
 
 /* This pseudo element inserts text that is hidden but is read by a screen reader */
-*[id^='Footnotes']::before {
-  content: 'Footnotes Section: ';
+*[id^="Footnotes"]::before {
+  content: "Footnotes Section: ";
   border: 0;
   clip-path: inset(50%);
   height: 1px;
@@ -653,12 +656,12 @@ main h6 {
   top: auto;
 }
 
-span[class^='footnote'] {
+span[class^="footnote"] {
   display: block;
 }
 
-.hasJS span[class^='footnote'],
-.hasJS span[class='fnWrapper'] {
+.hasJS span[class^="footnote"],
+.hasJS span[class="fnWrapper"] {
   display: none;
 } /* prevents page load flicker if JavaScript operative */
 
@@ -687,7 +690,7 @@ span[class^='footnote'] {
 }
 
 .fnNum::before {
-  content: '\200B';
+  content: "\200B";
 }
 
 .fnWrapper {
@@ -696,8 +699,12 @@ span[class^='footnote'] {
 }
 
 .tipContent {
-  /* very basic formatting of the footnote */
   display: table-cell;
+}
+
+.tipContent,
+.authornote {
+  /* very basic formatting of the footnote */
   border: var(--footnote-border);
   background-color: var(--footnote-bg);
   color: var(--footnote-text);
@@ -705,3 +712,8 @@ span[class^='footnote'] {
   font-size: 90%;
 }
 
+div.authornote {
+  width: 100%;
+  margin-top: 6px;
+  text-align: center;
+}
