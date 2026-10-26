@@ -84,9 +84,9 @@ function headerHTML() {
         <div class="sidebar-section">
             <blockquote>
             <h3>last updated:</h3>
-              <h4>05/29/26</h4><hr>
+              <h4>10/26/26</h4><hr>
                 <ul>
-                  <li>i've been meaning to add this quote js for literal months</li>
+                  <li>speculation is now discussion, with new content!</li>
                 </ul>
             </blockquote>
             <div style="text-align:center">
