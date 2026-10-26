@@ -35,7 +35,7 @@ function headerHTML() {
 	                <ul>
 	                  <li><a href="/bio.html">biography</a></li>
                     <li><a href="/relationships.html">relationships</a></li>
-	                  <li><a href="/speculation.html">speculation</a></li>
+	                  <li><a href="/discussion.html">discussion</a></li>
 	                  <li><a href="/localization.html">localization</a></li>
 	                </ul>
 	            </li>
@@ -84,9 +84,9 @@ function headerHTML() {
         <div class="sidebar-section">
             <blockquote>
             <h3>last updated:</h3>
-              <h4>05/29/26</h4><hr>
+              <h4>10/26/26</h4><hr>
                 <ul>
-                  <li>i've been meaning to add this quote js for literal months</li>
+                  <li>speculation is now discussion, with new content!</li>
                 </ul>
             </blockquote>
             <div style="text-align:center">

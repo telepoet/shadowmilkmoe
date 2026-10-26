@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>WELCOME, FOLKS!</title>
+
+    <meta content="" name="description" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="images/eyeof.png" />
+
+    <script>
+      document.documentElement.dataset.theme =
+        localStorage.getItem("theme") || "dark";
+    </script>
+
+    <link href="./style.css" rel="stylesheet" />
+    <script src="./layout.js"></script>
+
+    <style></style>
+  </head>
+  <body>
+    <a href="#content" id="skip-to-content-link">Skip to content</a>
+
+    <div class="layout">
+      <main id="content">
+        <section>
+          <h1>Discussion</h1>
+          <hr />
+          <p>
+            Within lies the ramblings of a madman. This page serves as an
+            archive of any manner of speculation or discussion posts I've
+            crafted over the years surrounding the Beast of Deceit, under a
+            variety of contexts, so text quality may vary and some are wildly
+            outdated. Click whatever interests you:
+          </p>
+          <blockquote>
+            <ul>
+              <li>
+                <a href="#pv" data-post="pv"
+                  >On Compassion, Love, and Pure Vanilla Cookie</a
+                >
+              </li>
+              <li>
+                <a href="#ultshamil" data-post="ultshamil"
+                  >Ultimate Shadow Milk is annoying on purpose</a
+                >
+              </li>
+              <li>
+                <a href="#sage" data-post="sage"
+                  >The Sage of Truth, a "Complex Cookie"</a
+                >
+              </li>
+              <li>
+                <a href="#light" data-post="light"
+                  >Shadow Milk's key art, and lighting as a narrative tool</a
+                >
+              </li>
+              <li>
+                <a href="#fount" data-post="fount"
+                  >(OLD) Who was the Fount of Knowledge?</a
+                >
+              </li>
+              <li>
+                <a href="#witches" data-post="witches"
+                  >(OLD) Relationship to The Witches</a
+                >
+              </li>
+              <li>
+                <a href="#academy" data-post="academy"
+                  >(OLD) The Blueberry Yogurt Academy</a
+                >
+              </li>
+            </ul>
+          </blockquote>
+          <hr />
+
+          <div id="post-view"></div>
+          <script>
+            const view = document.getElementById("post-view");
+
+            async function loadPost(postName) {
+              const response = await fetch(`blog/${postName}.html`);
+
+              if (!response.ok) {
+                view.innerHTML = "<p>Post not found.</p>";
+                return;
+              }
+
+              const html = await response.text();
+              view.innerHTML = html;
+
+              SetupTips();
+
+              // Update URL without reloading
+              history.pushState({ post: postName }, "", `#${postName}`);
+            }
+
+            document.querySelectorAll("[data-post]").forEach((link) => {
+              link.addEventListener("click", (event) => {
+                event.preventDefault();
+                const postName = link.dataset.post;
+                loadPost(postName);
+              });
+            });
+
+            // Handle browser back/forward
+            window.addEventListener("hashchange", () => {
+              const post = location.hash.replace("#", "");
+              if (post) {
+                loadPost(post);
+              }
+            });
+
+            // Load initial post if URL has hash
+            if (location.hash) {
+              const post = location.hash.replace("#", "");
+              loadPost(post);
+            }
+          </script>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
