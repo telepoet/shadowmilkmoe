@@ -106,7 +106,11 @@
 
             // Handle browser back/forward
             window.addEventListener("hashchange", () => {
-              const post = location.hash.replace("#", "");
+              const hash = location.hash.replace("#", "").trim();
+              // don't fuck around with footnotes
+              if (hash.startsWith("Fn_") || hash.startsWith("End-of-")) return;
+
+              const post = hash;
               if (post) {
                 loadPost(post);
               }
@@ -114,8 +118,14 @@
 
             // Load initial post if URL has hash
             if (location.hash) {
-              const post = location.hash.replace("#", "");
-              loadPost(post);
+              const hash = location.hash.replace("#", "").trim();
+              // don't fuck around with footnotes
+              if (!(hash.startsWith("Fn_") || hash.startsWith("End-of-"))) {
+                const post = hash;
+                if (post) {
+                  loadPost(post);
+                }
+              }
             }
           </script>
         </section>
